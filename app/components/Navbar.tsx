@@ -12,10 +12,10 @@ const Navbar = () => {
 
             {/* navigational items */}
             <ul className='flex gap-4 items-center'>
-                <li><Link href="/">Home</Link></li>
-                <li><Link href="/about">About</Link></li>
-                <li><Link href="/dashboard">Dashboard</Link></li>
-                <li><Link href="/contacts">Contacts</Link></li>
+                <li><Link href="/" className='hover:text-yellow-300'>Home</Link></li>
+                <li><Link href="/about" className='hover:text-yellow-300'>About</Link></li>
+                <li><Link href="/dashboard" className='hover:text-yellow-300'>Dashboard</Link></li>
+                <li><Link href="/contacts" className='hover:text-yellow-300'>Contacts</Link></li>
             </ul>
         </nav>
     </header>
