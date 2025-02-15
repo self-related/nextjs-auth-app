@@ -1,7 +1,10 @@
+import Image from 'next/image';
 import Link from 'next/link'
 import React from 'react'
 
 const Navbar = () => {
+    const user: boolean = false;
+
   return (
     <header className='bg-gray-800 text-white p-4'>
         <nav className='flex justify-between items-center container mx-auto'>
@@ -17,6 +20,21 @@ const Navbar = () => {
                 <li><Link href="/dashboard" className='hover:text-yellow-300'>Dashboard</Link></li>
                 <li><Link href="/contacts" className='hover:text-yellow-300'>Contacts</Link></li>
             </ul>
+
+            {/* user profile */}
+            {
+                user === true 
+                ?   <div className='flex gap-4 items-center'>
+                        <Link href='/profile'>
+                            <Image src="/mystery-man.jpg" alt='' height={35} width={35} className='rounded-full' />
+                        </Link>
+                        <button>Logout</button>
+                    </div>
+
+                :   <div className='flex gap-4 items-center'>
+                        <button className='px-4 py-1 rounded-full bg-blue-500 hover:bg-blue-700 active:bg-blue-900 transition-colors duration-300 cursor-pointer'>Login</button>
+                    </div>
+            }
         </nav>
     </header>
   )

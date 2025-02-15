@@ -27,7 +27,9 @@ export default function RootLayout({
     <html lang="en">
       <body className={`${geistSans.variable} ${geistMono.variable}`}>
         <Navbar />
-        {children}
+        <main className="container mx-auto py-4">
+            {children}
+        </main>
       </body>
     </html>
   );
