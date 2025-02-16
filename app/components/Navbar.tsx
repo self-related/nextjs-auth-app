@@ -1,6 +1,7 @@
 import Image from 'next/image';
 import Link from 'next/link'
 import React from 'react'
+import SignIn from './auth-component';
 
 const Navbar = () => {
     const user: boolean = false;
@@ -32,7 +33,9 @@ const Navbar = () => {
                     </div>
 
                 :   <div className='flex gap-4 items-center'>
-                        <button className='px-4 py-1 rounded-full bg-blue-500 hover:bg-blue-700 active:bg-blue-900 transition-colors duration-300 cursor-pointer'>Login</button>
+                        <SignIn
+                            className='px-4 py-1 rounded-full bg-blue-500 hover:bg-blue-700 active:bg-blue-900 transition-colors duration-300 cursor-pointer'
+                        >Login</SignIn>
                     </div>
             }
         </nav>
