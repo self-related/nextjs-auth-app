@@ -5,7 +5,7 @@ export function SignIn({provider, children, ...props}: {provider?: string, child
         <form
             action={async () => {
                 "use server"
-                await signIn(provider)
+                await signIn(provider); // if provider undefined | empty string, redirects to page to choose a provider
             }}
         >
             <button {...props} type="submit">{children}</button>
