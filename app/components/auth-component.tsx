@@ -1,4 +1,4 @@
-import { signIn } from "@/auth";
+import { signIn, signOut } from "@/auth";
 
 export function SignIn({provider, children, ...props}: {provider?: string, children?: string} & React.ButtonHTMLAttributes<HTMLButtonElement>) {
     return (
@@ -13,4 +13,16 @@ export function SignIn({provider, children, ...props}: {provider?: string, child
     );
 }
 
+export function SignOut({children, ...props}: {children: string} & React.ButtonHTMLAttributes<HTMLButtonElement>) {
 
+    return (
+        <form
+            action={async () => {
+                "use server"
+                await signOut();
+            }}
+        >
+            <button {...props} type="submit">{children}</button>
+        </form>
+    );
+}

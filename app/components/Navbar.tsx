@@ -1,7 +1,7 @@
 import Image from 'next/image';
 import Link from 'next/link'
 import React from 'react'
-import {SignIn} from './auth-component';
+import {SignIn, SignOut} from './auth-component';
 import { auth } from '@/auth';
 
 const Navbar = async () => {
@@ -30,7 +30,9 @@ const Navbar = async () => {
                         <Link href='/profile'>
                             <Image src={session?.user?.image ?? "/mystery-man.jpg"} alt='' height={35} width={35} className='rounded-full' />
                         </Link>
-                        <button>Logout</button>
+                        <SignOut
+                            className='px-4 py-1 rounded-full bg-blue-500 hover:bg-blue-700 active:bg-blue-900 cursor-pointer'
+                        >Logout</SignOut>
                     </div>
 
                 :   <div className='flex gap-4 items-center'>
