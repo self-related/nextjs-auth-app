@@ -1,7 +1,7 @@
 import Image from 'next/image';
 import Link from 'next/link'
 import React from 'react'
-import SignIn from './auth-component';
+import {SignIn} from './auth-component';
 import { auth } from '@/auth';
 
 const Navbar = async () => {

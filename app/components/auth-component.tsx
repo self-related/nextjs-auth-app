@@ -1,6 +1,6 @@
 import { signIn } from "@/auth";
 
-export default function SignIn({provider, children, ...props}: {provider?: string, children?: string} & React.ButtonHTMLAttributes<HTMLButtonElement>) {
+export function SignIn({provider, children, ...props}: {provider?: string, children?: string} & React.ButtonHTMLAttributes<HTMLButtonElement>) {
     return (
         <form
             action={async () => {
@@ -12,3 +12,5 @@ export default function SignIn({provider, children, ...props}: {provider?: strin
         </form>
     );
 }
+
+
