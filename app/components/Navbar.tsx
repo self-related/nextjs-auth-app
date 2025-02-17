@@ -6,9 +6,6 @@ import { auth } from '@/auth';
 
 const Navbar = async () => {
     const session = await auth();
-    console.log(session);
-
-    const user: boolean = false;
 
   return (
     <header className='bg-gray-800 text-white p-4'>
@@ -31,7 +28,7 @@ const Navbar = async () => {
                 session?.user != null
                 ?   <div className='flex gap-4 items-center'>
                         <Link href='/profile'>
-                            <Image src={"/mystery-man.jpg"} alt='' height={35} width={35} className='rounded-full' />
+                            <Image src={session?.user?.image ?? "/mystery-man.jpg"} alt='' height={35} width={35} className='rounded-full' />
                         </Link>
                         <button>Logout</button>
                     </div>
